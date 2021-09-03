@@ -16,3 +16,13 @@ background-color: lightslategray;
 #AboutMe{
     color: Green;
 }
+
+form{
+    background-color: lightgrey;
+    border-radius: 4px;
+    border-color: darkgrey;
+  }
+  
+  input,textarea,select {
+    margin: 10px;
+  }
