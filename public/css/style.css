@@ -1,7 +1,10 @@
-p{
-    color: purple;
-}
+
 
 h2{
     background-color: red;
+}
+
+nav{
+    background-color: darkblue;
+    color: white;
 }
