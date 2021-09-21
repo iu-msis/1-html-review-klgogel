@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>aboutme</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"></script>
+  
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+
+
+
+<body>
+<header>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <a class="navbar-brand" href="books.html">Books</a>
+  <a class="navbar-brand" href="mytravels.html">Books</a>
+</nav>
+</header>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Favorite Books</title>
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<main>
+    <h1>My Favorite Books</h1>
+      <table id="booktable" class = "table  table-striped table-hover table-condensed">
+        <thead>
+          <tr>
+            <TH class = "text-center">Title</TH>	
+            <TH class = "text-center"> Author </TH>
+            <TH class = "text-center"> Year Published </TH>
+            <TH class = "text-center"> Publisher </TH>
+            <TH class = "text-center"> Page Count </TH>
+            <TH class = "text-center"> MSRP</TH>
+          </tr>
+        </thead>
+
+        <tbody>
+          <TR>
+            <TD class = "text-center">Harry Potter and the Prisoner of Azkaban</TD>	
+            <TD class = "text-center">JK Rowlings</TD>	
+            <TD class = "text-center">1999 </TD>
+            <TD class = "text-center">Bloomsbury </TD>
+            <TD class = "text-center">317 </TD>
+            <TD class = "text-center">$12.87 </TD>
+          </TR>
+          <TR>
+            <TD class = "text-center">A Game of Thrones</TD>	
+            <TD class = "text-center">George R.R Martin</TD>	
+            <TD class = "text-center">1996 </TD>
+            <TD class = "text-center">Bantam Books </TD>
+            <TD class = "text-center">694 </TD>
+            <TD class = "text-center">$21.00 </TD>
+          </TR>
+          <TR>
+            <TD class = "text-center">Lean In</TD>	
+            <TD class = "text-center">Sheryl Sandberg</TD>	
+            <TD class = "text-center">2013 </TD>
+            <TD class = "text-center">Alfred A. Knopf </TD>
+            <TD class = "text-center">247 </TD>
+            <TD class = "text-center">$15.80 </TD>
+          </TR>
+          <TR>
+            <TD class = "text-center">Originals</TD>	
+            <TD class = "text-center">Adam Grant</TD>	
+            <TD class = "text-center">2016 </TD>
+            <TD class = "text-center">Penguin Books </TD>
+            <TD class = "text-center">394 </TD>
+            <TD class = "text-center">$9.99 </TD>
+          </TR> 
+          <TR>
+        </tbody>
+
+      </table>
+
+    <form action="confirmationpage.html" method = "POST" "col-lg-6">
+        Book Title<input type="text"> <br>
+        Author <input type = "text"> <br>
+        Year Published <input type = "text"> <br>
+        Publisher <input type = "text"> <br>
+        Page Number <input type = "text"> <br>
+        MSRP <input type = "text"> <br>
+        
+        Comments: <br>
+        <textarea> </textarea><br>
+
+        <input type="submit">
+
+    </form>
+</main>
+    <script src="js/tablesort.min.js"></script> 
+    <script>
+      new Tablesort(document.getElementById('booktable'));
+    </script>
+</body>
+
+<footer>
+  <p> Jane Goodall | Phone: 800-555-1234 | 444 Four Circles Dr, Daytona, FL 32114</p>
+</footer>
+</html>
