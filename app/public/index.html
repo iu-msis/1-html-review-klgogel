@@ -15,6 +15,7 @@
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   
+  <script src="https://unpkg.com/vue@next"></script>
 
 </head>
 
@@ -35,16 +36,26 @@
   <img src="images/janegoodall.jpg" alt="janegoodall" height="200px"> <br>
   <!--source for image: https://janegoodall.org/-->
   <h3> Bio </h3>
-  <p> Name: Jane Goodall </p> <br>
+  <div id="Person" class="col col-8">
+  <p> Name: </p> <p>{{person.name.first}} {{person.name.last}}</p>
   <p> Country: United States </p> <br>
   <p> Birthdate: 04/26/1960 </p> <br>
   <p> Age: 62</p> <br>
   <p> Email: <a href="mailto:janegoodall@gmail.com">janegoodall@gmail.com</a></p> <br>
+  
+  <form v-on:submit.prevent="fetchUserData">
+    <button type="submit">Reload</button>
+  </form>
+  <p>{{ this.person.dob.date }}</p>
+  <p>{{ prettyBirthday }}</p>
+
+  <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
+  <p>{{ person }}</p>
+  </div>
 </main>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+<script src="js\Person.js"></script>
 
 </body>
-
-<footer>
-  <p>  Jane Goodall | Phone: 800-555-1234 | 444 Four Circles Dr, Daytona, FL 32114</p>
-</footer>
 </html>
