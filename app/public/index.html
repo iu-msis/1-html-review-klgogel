@@ -36,21 +36,18 @@
   <img src="images/janegoodall.jpg" alt="janegoodall" height="200px"> <br>
   <!--source for image: https://janegoodall.org/-->
   <h3> Bio </h3>
-  <div id="Person" class="col col-8">
+  <div id='Person' class="col col-8">
   <p> Name: </p> <p>{{person.name.first}} {{person.name.last}}</p>
-  <p> Country: United States </p> <br>
-  <p> Birthdate: 04/26/1960 </p> <br>
-  <p> Age: 62</p> <br>
-  <p> Email: <a href="mailto:janegoodall@gmail.com">janegoodall@gmail.com</a></p> <br>
+  <p>{{ person }}</p>
+  <p> Country: </p> <p> {{this.person.location.state}} </P><br>
+  <!-- <p> DOB: 04/26/1960 </p> <br> -->
+  <p> DOB: </p> <p>{{ this.person.dob.date }}</p> <br>
+  <p> Age: </p> <p>{{ this.person.dob.age }}</p> <br>
+  <p> Email:  <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p> <br>
   
   <form v-on:submit.prevent="fetchUserData">
     <button type="submit">Reload</button>
   </form>
-  <p>{{ this.person.dob.date }}</p>
-  <p>{{ prettyBirthday }}</p>
-
-  <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
-  <p>{{ person }}</p>
   </div>
 </main>
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
