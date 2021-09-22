@@ -9,12 +9,13 @@
  
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"></script>
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   
+  <script src="https://unpkg.com/vue@next"></script>
 
 </head>
 
@@ -35,16 +36,23 @@
   <img src="images/janegoodall.jpg" alt="janegoodall" height="200px"> <br>
   <!--source for image: https://janegoodall.org/-->
   <h3> Bio </h3>
-  <p> Name: Jane Goodall </p> <br>
-  <p> Country: United States </p> <br>
-  <p> Birthdate: 04/26/1960 </p> <br>
-  <p> Age: 62</p> <br>
-  <p> Email: <a href="mailto:janegoodall@gmail.com">janegoodall@gmail.com</a></p> <br>
+  <div id='Person' class="col col-8">
+  <p> Name: </p> <p>{{person.name.first}} {{person.name.last}}</p>
+  <p>{{ person }}</p>
+  <p> Country: </p> <p> {{this.person.location.state}} </P><br>
+  <!-- <p> DOB: 04/26/1960 </p> <br> -->
+  <p> DOB: </p> <p>{{ this.person.dob.date }}</p> <br>
+  <p> Age: </p> <p>{{ this.person.dob.age }}</p> <br>
+  <p> Email:  <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p> <br>
+  
+  <form v-on:submit.prevent="fetchUserData">
+    <button type="submit">Reload</button>
+  </form>
+  </div>
 </main>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+<script src="js\Person.js"></script>
 
 </body>
-
-<footer>
-  <p>  Jane Goodall | Phone: 800-555-1234 | 444 Four Circles Dr, Daytona, FL 32114</p>
-</footer>
 </html>
