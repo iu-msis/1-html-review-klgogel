@@ -2,10 +2,6 @@ const Person = {
     data() {
       return {
         "person": {
-            name:{},
-            picture:{},
-            dob:{},
-            location:{},
         },
              }
     },
@@ -18,7 +14,6 @@ created() {
             console.log(parsedJson);
             this.person = parsedJson.results[0]
             this.picture = this.person.picture.large
-            this.address = this.person.location.street.number + this.person.location.street.name
         })
         .catch( err => {
             console.error(err)
