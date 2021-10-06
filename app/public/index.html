@@ -22,9 +22,8 @@
   </nav>
 </div>
 <main>
-  <div id="PersonApp" class = "container"></div>
   <h2 id = "AboutMe">About Me</h2>
-
+  <div id="PersonApp" class = "container">
     <p><img v-bind:src="picture"></p>
     <p>Name: {{ person.name.first }} {{ person.name.last }}</p>
     <p>Birthdate: {{ prettyBirthday }}</p>
