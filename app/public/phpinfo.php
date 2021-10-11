@@ -1,3 +1,3 @@
-<?php //never close
+<?php 
 
-phpinfo(); 
+phpinfo();
