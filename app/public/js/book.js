@@ -1,41 +1,55 @@
+
 const BookApp = {
     data() {
       return {
         books: [],
-        selectedBooks: null,
-        booksForm: {}
+        booksForm: {},
       }
     },
     computed: {},
     methods: {
-        prettyDollar(n) {
-            const d = new Intl.NumberFormat("en-US").format(n);
-            return "$ " + d;
+            prettyDollar(n) {
+                const d = new Intl.NumberFormat("en-US").format(n);
+                return "$ " + d;
+            },
+            fetchBooksData() {
+                fetch('/api/books/')
+                .then( response => response.json() )
+                .then( (responseJson) => {
+                    console.log(responseJson);
+                    this.books = responseJson;
+                })
+                .catch( (err) => {
+                    console.error(err);
+                })
+            },
+            postNewBooks(evt) {     
+                
+                console.log("Posting!", this.booksForm);
+                alert("posting!");
+        
+                fetch('api/books/create.php', {
+                    method:'POST',
+                    body: JSON.stringify(this.booksForm),
+                    headers: {
+                      "Content-Type": "application/json; charset=utf-8"
+                    }
+                  })
+                  .then( response => response.json() )
+                  .then( json => {
+                    console.log("Returned from post:", json);
+                    // TODO: test a result was returned!
+                    this.books = json;
+                    
+                    // reset the form
+                    this.booksForm = {};
+                  });
+              }
         },
-        fetchBooksData() {
-            fetch('/api/books/')
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.books = responseJson;
-            })
-            .catch( (err) => {
-                console.error(err);
-            })
+        created() {
+            this.fetchBooksData();
         }
-        handleEditBooks(books){
-            this.selectedBooks=books;
-            this.booksForm = this.selectedBooks;
-        },
-        handleCancelEdit(){
-            this.selectedBooks = null;
-            this.booksForm = {};
-        }
-    },
-    created() {
-        this.fetchBooksData();
-    }
-  
-  }
-  
-  Vue.createApp(BookApp).mount('#booksApp');
+      
+      }
+
+Vue.createApp(BookApp).mount('#booksApp');
